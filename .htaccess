@@ -1,0 +1,20 @@
+# Enable CGI execution
+Options +ExecCGI
+AddHandler cgi-script .py
+
+# Enable URL Rewriting
+RewriteEngine On
+
+# RewriteBase /cgi-bin/  # COMMENT THIS OUT OR REMOVE
+
+# If accessing /cgi-bin/ directly, rewrite to index.py
+RewriteCond %{REQUEST_URI} ^/cgi-bin/?$
+RewriteRule ^(.*)$ /cgi-bin/public/index.py [L,QSA]
+
+# For any other request, if it's not a file or directory, route through index.py
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /cgi-bin/public/index.py [L,QSA]
+
+# Prevent directory listing
+Options -Indexes

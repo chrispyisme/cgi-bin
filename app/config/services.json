@@ -1,0 +1,48 @@
+[
+    {
+        "abstract": "logger",
+        "concrete": "lib.logging.Logger.Logger",
+        "type": "singleton",
+        "params": {
+            "level": "INFO",
+            "file": "/path/to/logfile.log",
+            "name": "sm",
+            "format": "%(asctime)s [%(levelname)8s] %(name)s:%(filename)s:%(lineno)d - %(funcName)s() - %(message)s"
+        }
+    },
+    {
+        "abstract": "response",
+        "concrete": "lib.http.Response.Response",
+        "type": "singleton"
+    },
+    {
+        "abstract": "Request",
+        "concrete": "lib.http.Request.Request",
+        "type": "factory"
+    },
+    {
+        "abstract": "router",
+        "concrete": "lib.routing.Router.Router",
+        "type": "singleton",
+        "params": {"request": "Request"}
+    },
+    {
+        "abstract": "fileloader",
+        "concrete": "lib.fs.files.FileSystem",
+        "type": "singleton",
+        "params": {"directories": ["/static/assets/enabled"]}
+    },
+    {
+        "abstract": "template",
+        "concrete": "lib.ui.Template.Template",
+        "type": "singleton",
+        "params": {
+            "base_html": "base.html",
+            "assets_path": "/static/assets/enabled",
+            "_data": {
+                "SITE_TITLE": "My Awesome App",
+                "COPYRIGHT_YEAR": "2026"
+            }
+        }
+    }
+]
