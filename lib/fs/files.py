@@ -45,6 +45,8 @@ class AppException(Exception):
 class FileSystem:
     def __init__(self, directories: Optional[Union[List[str], List[Path], Dict[str, str], Dict[str, Path]]] = None, c:Container = None) -> None:
         self._mapped_directories: Dict[str, Path] = {}
+        self._log = c.make("logger")
+        #self._log.info("Filesytem initilaized with the logger")
         self._default_extension: str = "php"
         self._default_html_extension: str = "html"
         self._file_cache: Dict[str, str] = {}

@@ -21,4 +21,4 @@ class View:
         template = sm.make("template")
         #self.init_template()
         self.res.set_header("X-view-init", "True")
-        self.res.set_body(template.content)
+        self.res.set_body("&nbsp;")

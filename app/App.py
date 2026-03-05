@@ -40,7 +40,7 @@ class App:
                                      "directories":file_load
                                      })
         self.service_manager.add(abstract="template", concrete="lib.ui.Template.Template", service_type="factory",
-                                 params={"base_layout":"base.html", "assets":"/static/assets/enabled"})
+                                 params={"base_layout":"base.html", "assets":"/usr/lib/cgi-bin/static/assets/enabled"})
        
 
     def init_services_manager(self):

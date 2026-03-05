@@ -19,6 +19,7 @@ settings = {
     "logger":{
         "log_dir": "/usr/lib/cgi-bin/app/logs",
         "format": "%(asctime)s [%(levelname)8s] %(filename)s:%(lineno)d - %(message)s"
+    
     }
     
 }

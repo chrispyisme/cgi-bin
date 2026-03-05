@@ -214,7 +214,7 @@ class ServiceManager:
             resolved = self._auto_resolve_params(service['params'])
             key = self.container._normalize_key(service['abstract'])
             self.container._binding_params[key] = resolved
-    
+            
     def _auto_resolve_params(self, params: Dict) -> Dict:
         """Auto-resolve all param types"""
         return {name: self._resolve_value(value) for name, value in params.items()}

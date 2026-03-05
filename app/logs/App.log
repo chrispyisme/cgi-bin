@@ -1,0 +1,39 @@
+2026-03-03 09:51:42.050 [    INFO] sm:files.py:49 - __init__() - Filesytem initilaized with the logger
+2026-03-03 10:03:14.044 [    INFO] sm:files.py:49 - __init__() - Filesytem initilaized with the logger
+2026-03-03 10:06:43.079 [    INFO] sm:files.py:49 - __init__() - Filesytem initilaized with the logger
+2026-03-03 14:23:39.055 [    INFO] sm:files.py:49 - __init__() - Filesytem initilaized with the logger
+2026-03-03 14:34:20.179 [    INFO] sm:files.py:49 - __init__() - Filesytem initilaized with the logger
+2026-03-03 14:34:33.811 [    INFO] sm:files.py:49 - __init__() - Filesytem initilaized with the logger
+2026-03-03 14:44:55.889 [    INFO] sm:files.py:49 - __init__() - Filesytem initilaized with the logger
+2026-03-03 14:47:09.480 [    INFO] sm:files.py:49 - __init__() - Filesytem initilaized with the logger
+2026-03-03 15:51:18.449 [    INFO] sm:files.py:49 - __init__() - Filesytem initilaized with the logger
+2026-03-03 15:51:18.463 [    INFO] sm:Template.py:47 - __init__() - logging asset /usr/lib/cgi-bin/static/assets/enabled/custom/css/base.css
+2026-03-03 15:52:40.553 [    INFO] sm:files.py:49 - __init__() - Filesytem initilaized with the logger
+2026-03-03 15:52:40.559 [    INFO] sm:Template.py:47 - __init__() - logging asset /usr/lib/cgi-bin/static/assets/enabled/custom/css/base.css
+2026-03-04 08:35:05.635 [    INFO] sm:files.py:49 - __init__() - Filesytem initilaized with the logger
+2026-03-04 08:35:15.929 [    INFO] sm:files.py:49 - __init__() - Filesytem initilaized with the logger
+2026-03-04 08:40:43.263 [    INFO] sm:files.py:49 - __init__() - Filesytem initilaized with the logger
+2026-03-04 08:40:55.532 [    INFO] sm:files.py:49 - __init__() - Filesytem initilaized with the logger
+2026-03-04 08:41:07.013 [    INFO] sm:files.py:49 - __init__() - Filesytem initilaized with the logger
+2026-03-04 08:42:06.283 [    INFO] sm:files.py:49 - __init__() - Filesytem initilaized with the logger
+2026-03-04 08:50:19.371 [    INFO] sm:files.py:49 - __init__() - Filesytem initilaized with the logger
+2026-03-04 08:50:55.747 [    INFO] sm:files.py:49 - __init__() - Filesytem initilaized with the logger
+2026-03-04 08:52:06.090 [    INFO] sm:files.py:49 - __init__() - Filesytem initilaized with the logger
+2026-03-04 08:52:21.910 [    INFO] sm:files.py:49 - __init__() - Filesytem initilaized with the logger
+2026-03-04 08:54:56.784 [    INFO] sm:files.py:49 - __init__() - Filesytem initilaized with the logger
+2026-03-04 08:56:26.738 [    INFO] sm:files.py:49 - __init__() - Filesytem initilaized with the logger
+2026-03-04 08:59:39.197 [    INFO] sm:files.py:49 - __init__() - Filesytem initilaized with the logger
+2026-03-04 09:01:18.273 [    INFO] sm:files.py:49 - __init__() - Filesytem initilaized with the logger
+2026-03-04 14:33:46.404 [    INFO] sm:files.py:49 - __init__() - Filesytem initilaized with the logger
+2026-03-04 14:37:30.385 [    INFO] sm:files.py:49 - __init__() - Filesytem initilaized with the logger
+2026-03-04 14:41:16.490 [    INFO] sm:files.py:49 - __init__() - Filesytem initilaized with the logger
+2026-03-04 15:46:09.583 [    INFO] sm:files.py:49 - __init__() - Filesytem initilaized with the logger
+2026-03-04 15:46:31.855 [    INFO] sm:files.py:49 - __init__() - Filesytem initilaized with the logger
+2026-03-04 19:43:04.361 [    INFO] sm:files.py:49 - __init__() - Filesytem initilaized with the logger
+2026-03-04 19:43:11.126 [    INFO] sm:files.py:49 - __init__() - Filesytem initilaized with the logger
+2026-03-04 19:46:49.698 [    INFO] sm:files.py:49 - __init__() - Filesytem initilaized with the logger
+2026-03-04 20:15:12.361 [    INFO] sm:Template.py:38 - __init__() - the asset dir is the /usr/lib/cgi-bin/static/assets/enabled
+2026-03-04 20:19:13.797 [    INFO] sm:Template.py:39 - __init__() - the asset dir is the /usr/lib/cgi-bin/static/assets/enabled
+2026-03-04 20:19:13.801 [    INFO] sm:Template.py:47 - __init__() - the assets list is [PosixPath('/usr/lib/cgi-bin/static/assets/enabled/custom/css/base.css'), PosixPath('/usr/lib/cgi-bin/static/assets/enabled/custom/js/app.js'), PosixPath('/usr/lib/cgi-bin/static/assets/enabled/vendor/css/bootstrap/bootstrap.css'), PosixPath('/usr/lib/cgi-bin/static/assets/enabled/vendor/js/jquery/jequery.js')]
+2026-03-05 14:31:46.372 [    INFO] sm:Template.py:40 - __init__() - the asset dir is the /usr/lib/cgi-bin/static/assets/enabled
+2026-03-05 14:31:46.382 [    INFO] sm:Template.py:48 - __init__() - the assets list is [PosixPath('/usr/lib/cgi-bin/static/assets/enabled/custom/css/base.css'), PosixPath('/usr/lib/cgi-bin/static/assets/enabled/custom/js/app.js'), PosixPath('/usr/lib/cgi-bin/static/assets/enabled/vendor/css/bootstrap/bootstrap.css'), PosixPath('/usr/lib/cgi-bin/static/assets/enabled/vendor/js/jquery/jequery.js')]
