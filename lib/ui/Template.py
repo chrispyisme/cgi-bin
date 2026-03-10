@@ -5,6 +5,7 @@ from typing import Dict, List, Union, Optional, Callable
 import lxml.etree
 import lxml.html
 from pathlib import Path
+from lib.di.ServiceManager import ServiceManager
 from pathlib import PosixPath
 
 class Template:
@@ -13,10 +14,11 @@ class Template:
     def add_var(self, name, value):
         self.vars.update({name:value})
         
-    def add_routine(self, ns, routine, params):
-        self.routines.update({ns:{"routine":routine, "params":params}})
-    def add_function(self, namespace, callable_function):
+    def add_function(self, namespace, callable_function) -> "Template":
           self.routines[namespace] = callable_function
+          return self
+      
+
     def __init__(self, c, base_layout, assets):
         self.base_layout = base_layout
         self.assets = assets
@@ -25,7 +27,7 @@ class Template:
         self.container = c
         self._log = c.make("logger")
         
-        sm = self.container.get_property("service_manager")
+        sm:ServiceManager = self.container.get_property("service_manager")
         settings = sm.get_property("settings")
         fl = sm.make("fileloader")
         # determine the assets directory (allow relative paths)
@@ -47,16 +49,19 @@ class Template:
         assets_list:List = fl.find_files_by_extension(["css", "js"])
         self._log.info(f"the assets list is {assets_list}")
         self.base_doc = lxml.html.fromstring(fl.read_file(base_layout))
+        
         for asset in assets_list:
-            asset_path = asset.resolve()
-            #print(type(asset_path))
-            if isinstance(asset_path, str):
-                domObject = None
-                if(asset.resolve().endswith(".css")):
-                    domObject = lxml.html.fromstring(f"<link href='/cgi-bin{asset.resolve()}' rel='stylesheet' type='text/css' />")
-                else:
-                    domObject = lxml.html.fromstring(f"<script src='{asset.resolve()}'></script>")
-            #print(type(domObject))
-            self.base_doc.get_element_by_id("assets").append(domObject)
+            asset_path = asset.resolve()  
+            asset_path = asset_path.__str__()
+           
+           
+            domObject = ''
+            if(asset_path.endswith(".css")):
+                id = "head_tag"
+                domObject = lxml.html.fromstring(f"<link href='/cgi-bin{asset.resolve()}' rel='stylesheet' type='text/css' />")
+            else:
+                id = "body_tag"
+                domObject = lxml.html.fromstring(f"<script src='{asset.resolve()}'></script>")
+            self.base_doc.get_element_by_id(id).append(domObject)
         self.content = lxml.html.tostring(self.base_doc).decode("utf-8")
         

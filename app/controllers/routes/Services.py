@@ -1,9 +1,6 @@
 from lib.http.Response import Response
 from http.server import HTTPServer, BaseHTTPRequestHandler
-class http_server(BaseHTTPRequestHandler):
-    def do_GET(self):
-        pass
-    def do_POST(self)
+
 class Services:
     def __init__(self, container, request, **params):
         pass

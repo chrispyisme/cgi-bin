@@ -4,9 +4,6 @@ import os
 import sys
 import re
 
-
-
-
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 from lib.di.Autoloader import Autoloader, AutoloaderException
 from lib.di.Container import Container
@@ -56,3 +53,4 @@ app._GET(uri="/", handler="Home@index", middleware=['ViewInit'])
 app._GET(uri="/register", handler="Register@auth", middleware=['ViewInit', 'Authenticate'])
 app._GET(uri="/services", handler="Services@index", middleware=["ViewInit"])
 app.run()
+    

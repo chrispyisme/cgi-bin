@@ -37,7 +37,7 @@ class App:
         self.service_manager.add(abstract="router", concrete="lib.routing.Router.Router", service_type="singleton", params={"request":"Request"})
         self.service_manager.add(abstract="fileloader", concrete="lib.fs.files.FileSystem", service_type="singleton", 
                                  params={
-                                     "directories":file_load
+                                     "directories":file_load        
                                      })
         self.service_manager.add(abstract="template", concrete="lib.ui.Template.Template", service_type="factory",
                                  params={"base_layout":"base.html", "assets":"/usr/lib/cgi-bin/static/assets/enabled"})

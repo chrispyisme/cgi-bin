@@ -4,7 +4,7 @@ class Home:
     def __init__(self, container, request, **params):
         pass
         
-    def index(self, container, request, **params):
+    def index(self, container, request, **paramms):
         try:
             sm = container.get_property("service_manager")
             view = sm.get_property("view")

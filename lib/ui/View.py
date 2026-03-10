@@ -12,6 +12,7 @@ class View:
         self.c = container
         self.req = request
         self.res = self.c.make("response")
+        self.sm = container.get_property("service_manager")
         self.prm = params
         self.initialize_view()
         
@@ -22,3 +23,13 @@ class View:
         #self.init_template()
         self.res.set_header("X-view-init", "True")
         self.res.set_body("&nbsp;")
+      
+      
+    #we will need to open up the base document and read it into th tempate
+    #from there we will need to get the assets appended
+    #the logger is saying that im reaching?????rhe portion of code relevent  
+    def init_template(self):
+        self.fl = self.sm.make("fileloader")
+        #get the base ytemplate
+        
+        #actually i think that i cn use kust one metgod cal to
