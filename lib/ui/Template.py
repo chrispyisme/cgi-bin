@@ -1,67 +1,66 @@
-from lib.di.Container import Container
-from typing import List
-import os
-from typing import Dict, List, Union, Optional, Callable
-import lxml.etree
-import lxml.html
-from pathlib import Path
 from lib.di.ServiceManager import ServiceManager
-from pathlib import PosixPath
+from typing import List, Dict
+import lxml.html
+import os
+import sys
+
 
 class Template:
-    """Template middleware - adds custom header"""
-    
-    def add_var(self, name, value):
-        self.vars.update({name:value})
-        
-    def add_function(self, namespace, callable_function) -> "Template":
-          self.routines[namespace] = callable_function
-          return self
-      
-
     def __init__(self, c, base_layout, assets):
-        self.base_layout = base_layout
-        self.assets = assets
-        self.vars = {}
-        self.routines = {}
-        self.container = c
-        self._log = c.make("logger")
-        
-        sm:ServiceManager = self.container.get_property("service_manager")
-        settings = sm.get_property("settings")
-        fl = sm.make("fileloader")
-        # determine the assets directory (allow relative paths)
-        asset_dir = assets
-        if asset_dir:
-            # if not absolute, prefix with configured document_root
-            if not os.path.isabs(asset_dir):
-                docroot = settings.get("document_root", "")
-                asset_dir = os.path.join(docroot, asset_dir.lstrip("/"))
-        # default fallback
-        asset_dir =  "/usr/lib/cgi-bin/static/assets/enabled"
-        self._log.info(f"the asset dir is the {asset_dir}")
-        # map the assets directory
-        document_root = settings.get("document_root", "/usr/lib/cgi-bin")
-        
-        fl.map_directory("assets", asset_dir)
-        #print(fl._mapped_directories)
-        # find css/js files inside the mapped assets directory
-        assets_list:List = fl.find_files_by_extension(["css", "js"])
-        self._log.info(f"the assets list is {assets_list}")
-        self.base_doc = lxml.html.fromstring(fl.read_file(base_layout))
-        
-        for asset in assets_list:
-            asset_path = asset.resolve()  
-            asset_path = asset_path.__str__()
-           
-           
-            domObject = ''
-            if(asset_path.endswith(".css")):
-                id = "head_tag"
-                domObject = lxml.html.fromstring(f"<link href='/cgi-bin{asset.resolve()}' rel='stylesheet' type='text/css' />")
+            self.base_layout = base_layout
+            self.assets = assets
+            self.vars = {}
+            self.routines = {}
+            self.container = c
+            self._log = c.make("logger")
+            
+            sm: ServiceManager = self.container.get_property("service_manager")
+            settings = sm.get_property("settings")
+            fl = sm.make("fileloader")
+            
+            # Determine the assets directory
+            asset_dir = assets
+            if asset_dir:
+                if not os.path.isabs(asset_dir):
+                    docroot = settings.get("document_root", "")
+                    asset_dir = os.path.join(docroot, asset_dir.lstrip("/"))
             else:
-                id = "body_tag"
-                domObject = lxml.html.fromstring(f"<script src='{asset.resolve()}'></script>")
-            self.base_doc.get_element_by_id(id).append(domObject)
-        self.content = lxml.html.tostring(self.base_doc).decode("utf-8")
-        
+                # ONLY use the fallback if 'assets' wasn't provided
+                asset_dir = "/usr/lib/cgi-bin/static/assets/enabled"
+                
+            self._log.info(f"The asset dir is: {asset_dir}")
+            
+            # Map the assets directory
+            fl.map_directory("assets", asset_dir)
+            assets_list: List = fl.find_files_by_extension(["css", "js"])
+            
+            
+            self.base_doc = lxml.html.fromstring(fl.read_file(base_layout))
+            
+           
+            head = self.base_doc.xpath("//head")[0]
+            body = self.base_doc.xpath("//body")[0]
+
+            for asset in assets_list:
+
+                asset_sys_path = str(asset.resolve())
+                web_path = asset_sys_path.replace("/usr/lib", "")
+
+                if asset_sys_path.endswith(".css"):
+
+                    link = lxml.html.Element("link")
+                    link.set("rel", "stylesheet")
+                    link.set("type", "text/css")
+                    link.set("href", web_path)
+
+                    head.append(link)
+
+                elif asset_sys_path.endswith(".js"):
+
+                    script = lxml.html.Element("script")
+                    script.set("src", web_path)
+
+                    body.append(script)
+
+            self.content = lxml.html.tostring(self.base_doc).decode("utf-8")
+            #dstop = True

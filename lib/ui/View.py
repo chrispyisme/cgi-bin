@@ -22,7 +22,7 @@ class View:
         template = sm.make("template")
         #self.init_template()
         self.res.set_header("X-view-init", "True")
-        self.res.set_body("&nbsp;")
+        self.res.set_body(template.content)
       
       
     #we will need to open up the base document and read it into th tempate
