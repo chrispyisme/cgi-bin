@@ -75,3 +75,6 @@
 2026-03-21 18:23:58.139 [    INFO] sm:Template.py:32 - __init__() - The asset dir is: /var/www/html/static/assets/enabled
 2026-03-21 18:27:20.435 [    INFO] sm:Template.py:32 - __init__() - The asset dir is: /var/www/html/static/assets/enabled
 2026-03-21 23:06:23.977 [    INFO] sm:Template.py:32 - __init__() - The asset dir is: /var/www/html/static/assets/enabled
+2026-03-21 23:52:18.260 [    INFO] sm:Template.py:32 - __init__() - The asset dir is: /var/www/html/static/assets/enabled
+2026-03-22 01:57:48.342 [    INFO] sm:Template.py:32 - __init__() - The asset dir is: /var/www/html/static/assets/enabled
+2026-03-22 01:58:44.469 [    INFO] sm:Template.py:32 - __init__() - The asset dir is: /var/www/html/static/assets/enabled
