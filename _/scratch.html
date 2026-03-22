@@ -1,0 +1,24 @@
+        <routine name="my_registered_function" args="[]" result="return_data">
+            <table data-source="return_data" format="collection[3]">
+                <tr>
+                    <th>Name</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <td fill="key"></td>
+                    <td fill="value"></td>
+                </tr>
+        </routine>
+
+        <for item="item" collection="collection">
+            <if condition="item.active=='inactive'">
+                <li class="{{ item.class }} inactive">{{ item.text }}</li>
+            <!--<elif condition="item.active=='pending'" />-->
+            <else />
+                <li class="{{ item.class }} active">{{ item.text }}</li>
+            </if>
+        </for>
+        <ul data-repeat="link in nav_links">
+            <li data-repeat-item="link">
+                <a href="{{ link.href}}">{{ link.text}}</a>
+            </li>

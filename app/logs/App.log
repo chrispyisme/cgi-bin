@@ -1,0 +1,77 @@
+2026-03-13 01:12:43.619 [    INFO] sm:Template.py:31 - __init__() - The asset dir is: /usr/lib/cgi-bin/static/assets/enabled
+2026-03-13 01:12:43.634 [    INFO] sm:Template.py:46 - __init__() - web_path: /cgi-bin/static/assets/enabled/custom/css/base.css
+
+2026-03-13 01:12:43.642 [    INFO] sm:Template.py:50 - __init__() - domObject <Element html at 0x7fe545a77c40>
+
+2026-03-13 01:12:43.650 [    INFO] sm:Template.py:46 - __init__() - web_path: /cgi-bin/static/assets/enabled/custom/js/app.js
+
+2026-03-13 01:12:43.662 [    INFO] sm:Template.py:46 - __init__() - web_path: /cgi-bin/static/assets/enabled/vendor/css/bootstrap/bootstrap.css
+
+2026-03-13 01:12:43.671 [    INFO] sm:Template.py:50 - __init__() - domObject <Element html at 0x7fe545a75ee0>
+
+2026-03-13 01:12:43.679 [    INFO] sm:Template.py:46 - __init__() - web_path: /cgi-bin/static/assets/enabled/vendor/js/jquery/jequery.js
+
+2026-03-13 01:13:42.644 [    INFO] sm:Template.py:31 - __init__() - The asset dir is: /usr/lib/cgi-bin/static/assets/enabled
+2026-03-13 01:13:42.650 [    INFO] sm:Template.py:46 - __init__() - web_path: /cgi-bin/static/assets/enabled/custom/css/base.css
+
+2026-03-13 01:13:42.652 [    INFO] sm:Template.py:50 - __init__() - domObject <Element html at 0x7f746ee5a840>
+
+2026-03-13 01:13:42.653 [    INFO] sm:Template.py:46 - __init__() - web_path: /cgi-bin/static/assets/enabled/custom/js/app.js
+
+2026-03-13 01:13:42.655 [    INFO] sm:Template.py:46 - __init__() - web_path: /cgi-bin/static/assets/enabled/vendor/css/bootstrap/bootstrap.css
+
+2026-03-13 01:13:42.656 [    INFO] sm:Template.py:50 - __init__() - domObject <Element html at 0x7f746ee5a570>
+
+2026-03-13 01:13:42.657 [    INFO] sm:Template.py:46 - __init__() - web_path: /cgi-bin/static/assets/enabled/vendor/js/jquery/jequery.js
+
+2026-03-13 01:14:07.151 [    INFO] sm:Template.py:31 - __init__() - The asset dir is: /usr/lib/cgi-bin/static/assets/enabled
+2026-03-13 01:14:07.156 [    INFO] sm:Template.py:46 - __init__() - web_path: /cgi-bin/static/assets/enabled/custom/css/base.css
+
+2026-03-13 01:14:07.158 [    INFO] sm:Template.py:50 - __init__() - domObject <Element html at 0x7f1945dc6520>
+
+2026-03-13 01:14:07.160 [    INFO] sm:Template.py:46 - __init__() - web_path: /cgi-bin/static/assets/enabled/custom/js/app.js
+
+2026-03-13 01:14:07.162 [    INFO] sm:Template.py:46 - __init__() - web_path: /cgi-bin/static/assets/enabled/vendor/css/bootstrap/bootstrap.css
+
+2026-03-13 01:14:07.163 [    INFO] sm:Template.py:50 - __init__() - domObject <Element html at 0x7f1945dc67f0>
+
+2026-03-13 01:14:07.165 [    INFO] sm:Template.py:46 - __init__() - web_path: /cgi-bin/static/assets/enabled/vendor/js/jquery/jequery.js
+
+2026-03-13 01:46:44.210 [    INFO] sm:Template.py:31 - __init__() - The asset dir is: /usr/lib/cgi-bin/static/assets/enabled
+2026-03-13 01:47:33.032 [    INFO] sm:Template.py:31 - __init__() - The asset dir is: /usr/lib/cgi-bin/static/assets/enabled
+2026-03-13 01:48:42.988 [    INFO] sm:Template.py:31 - __init__() - The asset dir is: /usr/lib/cgi-bin/static/assets/enabled
+2026-03-13 01:49:55.403 [    INFO] sm:Template.py:31 - __init__() - The asset dir is: /usr/lib/cgi-bin/static/assets/enabled
+2026-03-13 01:52:18.375 [    INFO] sm:Template.py:31 - __init__() - The asset dir is: /usr/lib/cgi-bin/static/assets/enabled
+2026-03-13 01:56:46.041 [    INFO] sm:Template.py:31 - __init__() - The asset dir is: /usr/lib/cgi-bin/static/assets/enabled
+2026-03-13 02:01:18.760 [    INFO] sm:Template.py:31 - __init__() - The asset dir is: /usr/lib/cgi-bin/static/assets/enabled
+2026-03-13 02:06:08.367 [    INFO] sm:Template.py:31 - __init__() - The asset dir is: /usr/lib/cgi-bin/static/assets/enabled
+2026-03-13 02:06:36.544 [    INFO] sm:Template.py:31 - __init__() - The asset dir is: /usr/lib/cgi-bin/static/assets/enabled
+2026-03-13 02:07:05.941 [    INFO] sm:Template.py:31 - __init__() - The asset dir is: /usr/lib/cgi-bin/static/assets/enabled
+2026-03-13 02:07:39.245 [    INFO] sm:Template.py:31 - __init__() - The asset dir is: /usr/lib/cgi-bin/static/assets/enabled
+2026-03-13 02:08:31.147 [    INFO] sm:Template.py:31 - __init__() - The asset dir is: /usr/lib/cgi-bin/static/assets/enabled
+2026-03-13 02:09:00.855 [    INFO] sm:Template.py:31 - __init__() - The asset dir is: /usr/lib/cgi-bin/static/assets/enabled
+2026-03-13 02:09:09.887 [    INFO] sm:Template.py:31 - __init__() - The asset dir is: /usr/lib/cgi-bin/static/assets/enabled
+2026-03-13 02:17:26.653 [    INFO] sm:Template.py:31 - __init__() - The asset dir is: /usr/lib/cgi-bin/static/assets/enabled
+2026-03-13 02:17:30.854 [    INFO] sm:Template.py:31 - __init__() - The asset dir is: /usr/lib/cgi-bin/static/assets/enabled
+2026-03-13 02:17:31.688 [    INFO] sm:Template.py:31 - __init__() - The asset dir is: /usr/lib/cgi-bin/static/assets/enabled
+2026-03-13 02:19:31.416 [    INFO] sm:Template.py:31 - __init__() - The asset dir is: /usr/lib/cgi-bin/static/assets/enabled
+2026-03-13 02:23:02.343 [    INFO] sm:Template.py:31 - __init__() - The asset dir is: /usr/lib/cgi-bin/static/assets/enabled
+2026-03-13 02:24:26.031 [    INFO] sm:Template.py:31 - __init__() - The asset dir is: /usr/lib/cgi-bin/static/assets/enabled
+2026-03-13 02:25:03.753 [    INFO] sm:Template.py:31 - __init__() - The asset dir is: /usr/lib/cgi-bin/static/assets/enabled
+2026-03-21 17:38:22.631 [    INFO] sm:Template.py:31 - __init__() - The asset dir is: /usr/lib/cgi-bin/static/assets/enabled
+2026-03-21 17:41:48.330 [    INFO] sm:Template.py:31 - __init__() - The asset dir is: /usr/lib/cgi-bin/static/assets/enabled
+2026-03-21 17:42:28.526 [    INFO] sm:Template.py:31 - __init__() - The asset dir is: /var/www/html/static/assets/enabled
+2026-03-21 17:44:50.528 [    INFO] sm:Template.py:31 - __init__() - The asset dir is: /var/www/html/static/assets/enabled
+2026-03-21 17:45:21.368 [    INFO] sm:Template.py:31 - __init__() - The asset dir is: /var/www/html/static/assets/enabled
+2026-03-21 17:48:12.450 [    INFO] sm:Template.py:31 - __init__() - The asset dir is: /var/www/html/static/assets/enabled
+2026-03-21 17:52:37.660 [    INFO] sm:Template.py:31 - __init__() - The asset dir is: /var/www/html/static/assets/enabled
+2026-03-21 17:54:44.185 [    INFO] sm:Template.py:31 - __init__() - The asset dir is: /var/www/html/static/assets/enabled
+2026-03-21 17:56:14.961 [    INFO] sm:Template.py:31 - __init__() - The asset dir is: /var/www/html/static/assets/enabled
+2026-03-21 17:58:27.208 [    INFO] sm:Template.py:31 - __init__() - The asset dir is: /var/www/html/static/assets/enabled
+2026-03-21 18:00:51.976 [    INFO] sm:Template.py:31 - __init__() - The asset dir is: /var/www/html/static/assets/enabled
+2026-03-21 18:11:30.479 [    INFO] sm:Template.py:32 - __init__() - The asset dir is: /var/www/html/static/assets/enabled
+2026-03-21 18:14:11.685 [    INFO] sm:Template.py:32 - __init__() - The asset dir is: /var/www/html/static/assets/enabled
+2026-03-21 18:23:54.515 [    INFO] sm:Template.py:32 - __init__() - The asset dir is: /var/www/html/static/assets/enabled
+2026-03-21 18:23:58.139 [    INFO] sm:Template.py:32 - __init__() - The asset dir is: /var/www/html/static/assets/enabled
+2026-03-21 18:27:20.435 [    INFO] sm:Template.py:32 - __init__() - The asset dir is: /var/www/html/static/assets/enabled
+2026-03-21 23:06:23.977 [    INFO] sm:Template.py:32 - __init__() - The asset dir is: /var/www/html/static/assets/enabled

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Routing Engine Cheatsheet</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+        }
+
+        code, pre {
+            font-family: 'Fira Code', monospace;
+        }
+
+        .glass {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .copy-btn:active {
+            transform: scale(0.95);
+        }
+
+        .pattern-tag {
+            background: #334155;
+            color: #38bdf8;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <div class="max-w-5xl mx-auto">
+        <!-- Header -->
+        <header class="mb-12 text-center">
+            <h1 class="text-4xl font-bold mb-2 gradient-text">Routing Engine Cheatsheet</h1>
+            <p class="text-slate-400">Standalone Pattern Matching & Dispatching Engine</p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <!-- Section: URI Syntax -->
+            <section class="glass rounded-2xl p-6">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-link text-sky-400 mr-3 text-xl"></i>
+                    <h2 class="text-xl font-semibold">URI Pattern Syntax</h2>
+                </div>
+                <div class="space-y-4">
+                    <div class="border-l-4 border-sky-500 bg-sky-500/10 p-4 rounded-r-lg">
+                        <div class="flex justify-between items-start">
+                            <span class="font-medium text-sky-300">Named Parameter</span>
+                            <span class="pattern-tag">Standard</span>
+                        </div>
+                        <code class="block mt-2 text-sm text-slate-300">/user/{id}</code>
+                        <p class="text-xs text-slate-500 mt-1">Matches non-slash chars. Captures as "id".</p>
+                    </div>
+
+                    <div class="border-l-4 border-indigo-500 bg-indigo-500/10 p-4 rounded-r-lg">
+                        <div class="flex justify-between items-start">
+                            <span class="font-medium text-indigo-300">Regex Constraint</span>
+                            <span class="pattern-tag">Advanced</span>
+                        </div>
+                        <code class="block mt-2 text-sm text-slate-300">/user/{id:\d+}</code>
+                        <p class="text-xs text-slate-500 mt-1">Named capture "id" restricted to digits.</p>
+                    </div>
+
+                    <div class="border-l-4 border-purple-500 bg-purple-500/10 p-4 rounded-r-lg">
+                        <div class="flex justify-between items-start">
+                            <span class="font-medium text-purple-300">Inline Regex</span>
+                            <span class="pattern-tag">Raw</span>
+                        </div>
+                        <code class="block mt-2 text-sm text-slate-300">/post/(\d+)</code>
+                        <p class="text-xs text-slate-500 mt-1">Raw capture group. Accessible via index "0".</p>
+                    </div>
+
+                    <div class="border-l-4 border-emerald-500 bg-emerald-500/10 p-4 rounded-r-lg">
+                        <div class="flex justify-between items-start">
+                            <span class="font-medium text-emerald-300">Wildcard / Catch-all</span>
+                            <span class="pattern-tag">Fallback</span>
+                        </div>
+                        <code class="block mt-2 text-sm text-slate-300">/admin/*</code>
+                        <p class="text-xs text-slate-500 mt-1">Matches everything after the prefix.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Middleware -->
+            <section class="glass rounded-2xl p-6">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-layer-group text-indigo-400 mr-3 text-xl"></i>
+                    <h2 class="text-xl font-semibold">Middleware Pipeline</h2>
+                </div>
+                <div class="space-y-3">
+                    <div class="flex items-start space-x-3">
+                        <div class="bg-indigo-500/20 text-indigo-400 p-2 rounded-lg text-xs font-bold">01</div>
+                        <div>
+                            <h3 class="text-sm font-semibold">Global</h3>
+                            <p class="text-xs text-slate-400">router.use('AuthMiddleware')</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <div class="bg-sky-500/20 text-sky-400 p-2 rounded-lg text-xs font-bold">02</div>
+                        <div>
+                            <h3 class="text-sm font-semibold">Path-Specific</h3>
+                            <p class="text-xs text-slate-400">router.register_path_middleware('/api/*', [...])</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <div class="bg-emerald-500/20 text-emerald-400 p-2 rounded-lg text-xs font-bold">03</div>
+                        <div>
+                            <h3 class="text-sm font-semibold">Route-Specific</h3>
+                            <p class="text-xs text-slate-400">router.add_route(..., middleware=['log'])</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8">
+                    <h3 class="text-sm font-semibold mb-3 text-slate-400">Supported Formats</h3>
+                    <ul class="text-xs space-y-2">
+                        <li class="flex justify-between bg-slate-800/50 p-2 rounded">
+                            <span class="text-slate-300">FQN String</span>
+                            <code class="text-indigo-400">'app.mid.Auth'</code>
+                        </li>
+                        <li class="flex justify-between bg-slate-800/50 p-2 rounded">
+                            <span class="text-slate-300">Method Reference</span>
+                            <code class="text-indigo-400">'Auth@check'</code>
+                        </li>
+                        <li class="flex justify-between bg-slate-800/50 p-2 rounded">
+                            <span class="text-slate-300">Callable</span>
+                            <code class="text-indigo-400">lambda c, r, n: ...</code>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Section: Code Snippets -->
+            <section class="glass rounded-2xl p-6 md:col-span-2">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-code text-emerald-400 mr-3 text-xl"></i>
+                    <h2 class="text-xl font-semibold">Quick Start Implementation</h2>
+                </div>
+                <div class="relative group">
+                    <button onclick="copyCode()" class="copy-btn absolute top-4 right-4 bg-slate-700 hover:bg-slate-600 p-2 rounded text-xs transition-all opacity-0 group-hover:opacity-100">
+                        <i class="far fa-copy mr-1"></i> Copy
+                    </button>
+                    <pre id="code-block" class="bg-slate-900 p-6 rounded-xl text-sm overflow-x-auto text-sky-200">
+# 1. Initialize
+router = Router(request)
+
+# 2. Add Route with DI Overrides
+router.add_route(
+    uri='/users/{id:\d+}',
+    method='GET',
+    handler='app.controllers.UserController@show',
+    middleware=['AuthMiddleware'],
+    override_params={'timeout': 60}
+)
+
+# 3. Global Middleware
+router.use(lambda c, r, next: next())
+
+# 4. Dispatch
+response = router.dispatch(container)</pre>
+                </div>
+            </section>
+        </div>
+
+        <footer class="mt-12 text-center text-slate-500 text-sm">
+            <p>Built for Ninja Architecture v2.0</p>
+        </footer>
+    </div>
+
+    <script>
+        function copyCode() {
+            const code = document.getElementById('code-block').innerText;
+            const tempInput = document.createElement('textarea');
+            tempInput.value = code;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            
+            const btn = document.querySelector('.copy-btn');
+            btn.innerHTML = '<i class="fas fa-check text-emerald-400 mr-1"></i> Copied!';
+            setTimeout(() => {
+                btn.innerHTML = '<i class="far fa-copy mr-1"></i> Copy';
+            }, 2000);
+        }
+    </script>
+</body>
+</html>

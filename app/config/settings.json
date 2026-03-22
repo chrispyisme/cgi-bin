@@ -1,0 +1,18 @@
+{
+    "log_format":"%(asctime)s [%(levelname)8s] %(name)s:%(filename)s:%(lineno)d - %(funcName)s() - %(message)s",
+    "app_root":"/usr/lib/cgi-bin/app",
+    "paths":{
+        "views":"/views/routes",
+        "templates":"/views/templates",
+        "models":"/models/routes"
+    },
+
+    "autoload_paths": ["/usr/lib/cgi-bin/lib", "/usr/lib/cgi-bin/app"],
+    "db": {
+        "type": "smysql",
+        "host": "localhost",
+        "user": "pycgi",
+        "password": "bf6912",
+        "db":"httpstack"
+    },
+}
