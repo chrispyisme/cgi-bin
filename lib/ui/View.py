@@ -1,3 +1,5 @@
+import lxml.html
+
 """
 The View class represents the response. 
 It will be the only class that will be tied to this response object
@@ -21,6 +23,8 @@ class View:
         sm = self.c.get_property("service_manager")
         template = sm.make("template")
         template.add_var("title", "My App")
+        nav = lxml.html.fromstring(f"<ul><li><a href='#'>link</a></li></ul>")
+        template.add_var("nav", nav)
         template.render()
         #self.init_template()
         self.res.set_header("X-view-init", "True")
