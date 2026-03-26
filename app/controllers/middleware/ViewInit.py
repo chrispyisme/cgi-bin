@@ -22,11 +22,6 @@ class ViewInit:
         # for `/cgi-bin/public/static/...` comes through as `/static/...`.
         # if you don't want any middleware applied to those URIs you can simply
         # forward the call immediately.
-        uri = request.get_uri() or ''
-        if uri.startswith('/static/'):
-            # make sure we return whatever the next middleware/handler returns
-            return next()
-
         # create a view helper and attach it to the container so controllers
         # can grab it later.  **always return the result of `next()`**; the
         # router relies on the value being bubbled back up.

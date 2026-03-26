@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<header class="navbar">
+    <a href="/" class="brand">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="nav-icon">
+            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="logo-text">jsDelivr</span>
+    </a>
+    
+    <nav class="nav-links">
+        <a href="#">Network</a>
+        <a href="#">Features</a>
+        <a href="#">Sponsors</a>
+        <a href="#">Stats</a>
+        <a href="#" class="btn-outline">GitHub</a>
+    </nav>
+</header>
+
+    <main class="hero">
+        <div class="hero-content">
+            <h1 class="slide-up">A free, fast, and reliable Open Source CDN for npm and GitHub</h1>
+            <div class="search-container">
+                <input type="text" placeholder="Search for packages (e.g. jquery, react)...">
+                <button class="btn-primary">Search</button>
+            </div>
+            <div class="stats">
+                <span><strong>150B+</strong> requests per month</span>
+            </div>
+        </div>
+    </main>
+
+    <section class="features">
+        <div class="feature-card">
+            <h3>Multi-CDN</h3>
+            <p>We use multiple CDN providers to ensure maximum uptime and performance globally.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Developer Friendly</h3>
+            <p>Everything you need to integrate and deploy fast, right from the command line.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Open Source</h3>
+            <p>Proudly supporting the open-source community with high-tier free infrastructure.</p>
+        </div>
+    </section>
+<footer class="site-footer">
+        <div class="footer-content">
+            <div class="brand">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="nav-icon">
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="logo-text">jsDelivr</span>
+            </div>
+            <p>&copy; 2026 Open Source CDN Network. All rights reserved.</p>
+            <nav class="footer-links">
+                <a href="#">Terms</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">System Status</a>
+            </nav>
+        </div>
+    </footer>
+    <div class="hero-container">
+  <svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" class="ninja-canvas">
+    <defs>
+      <filter id="glow">
+        <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+        <feMerge>
+          <feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+    
+    <path d="M50 200 Q 400 50 750 200" class="network-line" />
+    <path d="M50 200 Q 400 350 750 200" class="network-line" />
+    
+    <circle cx="50" cy="200" r="8" class="node" />
+    <circle cx="750" cy="200" r="8" class="node" />
+    
+    <circle r="4" class="packet">
+      <animateMotion dur="3s" repeatCount="indefinite" path="M50 200 Q 400 50 750 200" />
+    </circle>
+  </svg>
+</div>
+
+<style>
+  .hero-container { background: #0a0a0c; overflow: hidden; }
+  .network-line { 
+    fill: none; stroke: #1a1a1f; stroke-width: 2; 
+  }
+  .node { fill: #00ff88; filter: url(#glow); }
+  .packet { fill: #00ff88; filter: url(#glow); }
+  
+  /* Pure CSS3 Keyframe for Background Ambience */
+  @keyframes backgroundPulse {
+    0% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+    100% { opacity: 0.3; }
+  }
+  
+  .ninja-canvas {
+    animation: backgroundPulse 8s ease-in-out infinite;
+  }
+</style>
+</body>
+</html>

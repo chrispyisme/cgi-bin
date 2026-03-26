@@ -78,3 +78,38 @@
 2026-03-21 23:52:18.260 [    INFO] sm:Template.py:32 - __init__() - The asset dir is: /var/www/html/static/assets/enabled
 2026-03-22 01:57:48.342 [    INFO] sm:Template.py:32 - __init__() - The asset dir is: /var/www/html/static/assets/enabled
 2026-03-22 01:58:44.469 [    INFO] sm:Template.py:32 - __init__() - The asset dir is: /var/www/html/static/assets/enabled
+2026-03-24 21:52:50.728 [    INFO] sm:Template.py:32 - __init__() - The asset dir is: /var/www/html/static/assets/enabled
+2026-03-24 22:10:36.896 [    INFO] sm:Template.py:32 - __init__() - The asset dir is: /var/www/html/static/assets/enabled
+2026-03-24 22:11:53.474 [    INFO] sm:Template.py:32 - __init__() - The asset dir is: /var/www/html/static/assets/enabled
+2026-03-24 22:12:53.798 [    INFO] sm:Template.py:32 - __init__() - The asset dir is: /var/www/html/static/assets/enabled
+2026-03-24 22:13:06.426 [    INFO] sm:Template.py:32 - __init__() - The asset dir is: /var/www/html/static/assets/enabled
+2026-03-24 22:16:44.388 [    INFO] sm:Template.py:32 - __init__() - The asset dir is: /var/www/html/static/assets/enabled
+2026-03-24 22:18:18.874 [    INFO] sm:Template.py:32 - __init__() - The asset dir is: /var/www/html/static/assets/enabled
+2026-03-24 22:19:02.733 [    INFO] sm:Template.py:32 - __init__() - The asset dir is: /var/www/html/static/assets/enabled
+2026-03-24 22:20:47.538 [    INFO] sm:Template.py:32 - __init__() - The asset dir is: /var/www/html/static/assets/enabled
+2026-03-24 22:27:12.335 [    INFO] sm:Template.py:32 - __init__() - The asset dir is: /var/www/html/static/assets/enabled
+2026-03-24 22:28:45.504 [    INFO] sm:Template.py:32 - __init__() - The asset dir is: /var/www/html/static/assets/enabled
+2026-03-24 22:41:08.973 [    INFO] sm:Template.py:32 - __init__() - The asset dir is: /var/www/html/static/assets/enabled
+2026-03-24 22:51:56.465 [    INFO] sm:Template.py:32 - __init__() - The asset dir is: /var/www/html/static/assets/enabled
+2026-03-24 22:53:22.165 [    INFO] sm:Template.py:32 - __init__() - The asset dir is: /var/www/html/static/assets/enabled
+2026-03-24 23:36:11.117 [    INFO] sm:Template.py:32 - __init__() - The asset dir is: /var/www/html/static/assets/enabled
+2026-03-24 23:56:44.592 [    INFO] sm:Template.py:32 - __init__() - The asset dir is: /var/www/html/static/assets/enabled
+2026-03-24 23:56:44.614 [   ERROR] sm:Template.py:134 - insert() - View home.html not found at /usr/lib/cgi-bin/views/home.html.html
+2026-03-24 23:57:47.903 [    INFO] sm:Template.py:32 - __init__() - The asset dir is: /var/www/html/static/assets/enabled
+2026-03-24 23:57:47.924 [   ERROR] sm:Template.py:134 - insert() - View home.html not found at /usr/lib/cgi-bin/views/home.html.html
+2026-03-24 23:59:25.287 [    INFO] sm:Template.py:32 - __init__() - The asset dir is: /var/www/html/static/assets/enabled
+2026-03-24 23:59:25.316 [   ERROR] sm:Template.py:134 - insert() - View home.html not found at /usr/lib/cgi-bin/views/home.html.html
+2026-03-25 00:00:26.690 [    INFO] sm:Template.py:32 - __init__() - The asset dir is: /var/www/html/static/assets/enabled
+2026-03-25 00:00:26.710 [   ERROR] sm:Template.py:134 - insert() - View home.html not found at /usr/lib/cgi-bin/views/home.html.html
+2026-03-25 00:09:53.399 [    INFO] sm:Template.py:32 - __init__() - The asset dir is: /var/www/html/static/assets/enabled
+2026-03-25 00:09:53.420 [   ERROR] sm:Template.py:134 - insert() - View home.html not found at /usr/lib/cgi-bin/app/views/routes/home.html.html
+2026-03-25 20:00:35.736 [    INFO] sm:Template.py:32 - __init__() - The asset dir is: /var/www/html/static/assets/enabled
+2026-03-25 20:00:35.757 [   ERROR] sm:Template.py:134 - insert() - View home.html not found at /usr/lib/cgi-bin/app/views/routes/home.html.html
+2026-03-25 20:17:38.868 [    INFO] sm:Template.py:32 - __init__() - The asset dir is: /var/www/html/static/assets/enabled
+2026-03-25 20:17:38.892 [   ERROR] sm:Template.py:134 - insert() - View home.html not found at /usr/lib/cgi-bin/app/views/routes/home.html.html
+2026-03-25 20:17:50.669 [    INFO] sm:Template.py:32 - __init__() - The asset dir is: /var/www/html/static/assets/enabled
+2026-03-25 20:17:50.727 [   ERROR] sm:Template.py:134 - insert() - View home.html not found at /usr/lib/cgi-bin/app/views/routes/home.html.html
+2026-03-25 20:43:51.034 [    INFO] sm:Template.py:32 - __init__() - The asset dir is: /var/www/html/static/assets/enabled
+2026-03-25 20:43:51.056 [   ERROR] sm:Template.py:134 - insert() - View home.html not found at /usr/lib/cgi-bin/app/views/routes/home.html.html
+2026-03-25 20:44:24.198 [    INFO] sm:Template.py:32 - __init__() - The asset dir is: /var/www/html/static/assets/enabled
+2026-03-25 20:44:24.225 [   ERROR] sm:Template.py:134 - insert() - View home.html not found at /usr/lib/cgi-bin/app/views/routes/home.html.html

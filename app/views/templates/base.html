@@ -3,12 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
+    <title data-var="title">{{title}}</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="main-container">
-  mains
-    </div>
+
+    <nav style="height: var(--nav-height); display: flex; justify-content: space-between; align-items: center; padding: 0 2rem; border-bottom: 1px solid var(--bg-card);">
+        <div class="logo"><strong>chriS</strong>.Py</div>
+        <ul style="display: flex; list-style: none; gap: 2rem;">
+            <li><a href="#/" style="color: var(--text-primary); text-decoration: none;">Home</a></li>
+            <li><a href="#/dev" style="color: var(--text-primary); text-decoration: none;">Web Development</a></li>
+            <li><a href="#/consulting" style="color: var(--text-primary); text-decoration: none;">Consulting</a></li>
+            <li><a href="#/contact" style="color: var(--text-primary); text-decoration: none;">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main id="view-port" data-view="view">
+        </main>
+
+    <footer style="padding: 4rem 2rem; background: var(--bg-card); margin-top: 4rem;">
+        <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 2rem;">
+            <div>&copy; 2026 Christopher McIntosh</div>
+            <div style="display: flex; gap: 1.5rem;">
+                <a href="#" style="color: var(--accent-dev);"><i class="fa-gitlab"></i>GitHub</a>
+                <a href="#" style="color: var(--accent-dev);">LinkedIn</a>
+                <a href="#" style="color: var(--accent-dev);">X</a>
+            </div>
+        </div>
+    </footer>
+
+
 </body>
 </html>

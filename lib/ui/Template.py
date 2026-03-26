@@ -119,6 +119,40 @@ class Template:
     def add_var(self, key, value):
         self.vars[key] = value
         
+    def insert(self, view_name: str):
+        """
+        Finds a view file via FileSystem, reads it, 
+        and injects it into the element with data-view="view".
+        """
+        fl = self.container.make("fileloader")
+        settings = self.container.get_property("settings")
+        
+        # Path logic: assuming views are in /views/ folder
+        view_path =  f"/usr/lib/cgi-bin/app/views/routes/{view_name}.html"
+        
+        if not os.path.exists(view_path):
+            self._log.error(f"View {view_name} not found at {view_path}")
+            return
+
+        view_raw = fl.read_file(view_path)
+        view_fragment = lxml.html.fragment_fromstring(view_raw)
+
+        # Find the insertion point: <main data-view="view">
+        # Using XPath to be precise
+        insertion_points = self.base_doc.xpath('//*[@data-view="view"]')
+        
+        if insertion_points:
+            target = insertion_points[0]
+            # Clear existing placeholder content and append the new fragment
+            target.text = None 
+            for child in target.getchildren():
+                target.remove(child)
+            target.append(view_fragment)
+            
+        # Update self.content with the new DOM state
+        self.content = lxml.html.tostring(self.base_doc).decode("utf-8")
+
+
     def is_html(self, value):   
         # Simple check if the value is an lxml Element or a string containing tags
         if isinstance(value, lxml.html.HtmlElement):

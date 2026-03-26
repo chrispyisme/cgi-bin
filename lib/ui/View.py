@@ -16,19 +16,19 @@ class View:
         self.res = self.c.make("response")
         self.sm = container.get_property("service_manager")
         self.prm = params
+        self.template = None
         self.initialize_view()
         
     def initialize_view(self):
         setttings = self.c.get_property("settings")
         sm = self.c.get_property("service_manager")
-        template = sm.make("template")
-        template.add_var("title", "My App")
-        nav = lxml.html.fromstring(f"<ul><li><a href='#'>link</a></li></ul>")
-        template.add_var("nav", nav)
-        template.render()
+        self.template = sm.make("template")
+        #add base layout vars here
+        self.template.add_var("title", "My App")
+        self.template.render()
         #self.init_template()
         self.res.set_header("X-view-init", "True")
-        self.res.set_body(template.content)
+        self.res.set_body(self.template.content)
       
       
     #we will need to open up the base document and read it into th tempate
