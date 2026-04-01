@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>CodeCycler · Build Your Site</title>
+
+</head>
+<body>
+    <div class="grid-bg"></div>
+    <div class="grain"></div>
+    
+    <!-- ============================================================
+         NAV
+         ============================================================ -->
+    <nav>
+      <div class="nav-inner">
+        <a class="logo" href="#">CODE<span>CYCLER</span></a>
+        <ul class="nav-links">
+          <li><a href="#" class="active">Home</a></li>
+          <li><a href="#design">Design</a></li>
+          <li><a href="#development">Development</a></li>
+          <li><a href="#data">Data Mgmt</a></li>
+          <li><a href="#diagnostics">Diagnostics</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button class="btn-outline" onclick="showTab('wo')">Work Order</button>
+          <button class="btn-solid" onclick="showTab('proj')">Build a Project</button>
+        </div>
+        <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <div class="mobile-menu" id="mobile-menu">
+        <a href="#">Home</a>
+        <a href="#design">Design</a>
+        <a href="#development">Development</a>
+        <a href="#data">Data Management</a>
+        <a href="#diagnostics">Diagnostics</a>
+        <a href="#builder" onclick="showTab('wo')">→ Open Work Order</a>
+        <a href="#builder" onclick="showTab('proj')">→ Build a Project</a>
+      </div>
+    </nav>
+    
+    <!-- ============================================================
+         HERO
+         ============================================================ -->
+    <section class="hero">
+      <div class="blob1 hero-blob"></div>
+      <div class="blob2 hero-blob"></div>
+      <div class="blob3 hero-blob"></div>
+    
+      <div class="hero-inner">
+        <!-- LEFT -->
+        <div>
+          <div class="hero-eyebrow">Fresno, CA · Remote Available - 559.400.5295 - cmcintosh.js@gmail.com</div>
+          <h1 class="hero-h1">
+            <span class="w1">BUILD.</span>
+            <span class="w2">REPAIR.</span>
+            <span class="w3">CONNECT.</span>
+          </h1>
+          <p class="hero-sub">
+            <strong>Web development, PC repair, mobile tech & network setup</strong> — all under one roof. No fluff. You pick exactly what you need and see the price build in real time.
+          </p>
+          <div class="hero-btns">
+            <button class="hero-btn-primary" onclick="scrollToBuilder('proj')">Build a Project →</button>
+            <button class="hero-btn-secondary" onclick="scrollToBuilder('wo')">Open Work Order</button>
+          </div>
+          <div class="hero-chips">
+            <span class="hchip c">⬡ Web Design</span>
+            <span class="hchip c">⬡ Web Apps</span>
+            <span class="hchip o">⬡ Mobile Apps</span>
+            <span class="hchip g">⬡ PC Repair</span>
+            <span class="hchip g">⬡ Network Setup</span>
+            <span class="hchip">⬡ Hosting</span>
+            <span class="hchip">⬡ Data Mgmt</span>
+          </div>
+        </div>
+    
+        <!-- RIGHT — terminal -->
+        <div class="hero-right">
+          <div class="terminal">
+            <div class="terminal-bar">
+              <div class="t-dots">
+                <div class="t-dot"></div><div class="t-dot"></div><div class="t-dot"></div>
+              </div>
+              <div class="t-title">codecycler — diagnostics</div>
+            </div>
+            <div class="terminal-body">
+              <div class="t-line"><span class="t-prompt">›</span><span class="t-cmd">scan --system --full</span></div>
+              <div class="t-out g">✓ Network: connected · 300mbps</div>
+              <div class="t-out g">✓ OS: Windows 11 · up to date</div>
+              <div class="t-out o">⚠ Startup: 14 items flagged</div>
+              <div class="t-out o">⚠ Storage: 94% used — critical</div>
+              <div class="t-out" style="color:var(--clr-danger)">✗ Malware: 3 threats detected</div>
+              <div class="t-line" style="margin-top:8px;"><span class="t-prompt">›</span><span class="t-cmd">repair --auto-fix --backup-first</span></div>
+              <div class="t-out g">✓ Backup created → external drive</div>
+              <div class="t-out g">✓ Threats quarantined + removed</div>
+              <div class="t-out g">✓ Startup optimized</div>
+              <div class="t-line"><span class="t-prompt">›</span><span class="t-cmd" id="typed-cmd">_<span class="t-cursor"></span></span></div>
+            </div>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-box">
+              <div class="stat-val">200<span style="font-size:20px;color:var(--clr-hot)">+</span></div>
+              <div class="stat-key">Repairs Done</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-val">48<span style="font-size:18px;color:var(--clr-muted)">hr</span></div>
+              <div class="stat-key">Avg Turnaround</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-val">5<span style="font-size:20px;color:var(--clr-glow)">★</span></div>
+              <div class="stat-key">Avg Rating</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="scroll-hint">
+        <span class="scroll-label">Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+    
+    <div class="divider"></div>
+    
+    <!-- ============================================================
+         BUILDER SECTION
+         ============================================================ -->
+    <section class="section-pad" id="builder">
+      <div class="main-container">
+    
+        <div class="section-header" style="position:relative;">
+          <div class="section-num">02</div>
+          <div class="section-label">Quote Builder</div>
+          <div class="section-title">WORK ORDERS + <span>PROJECTS</span></div>
+        </div>
+    
+        <!-- Tab switcher -->
+        <div class="tabs">
+          <button class="tab" id="tab-wo" onclick="showTab('wo')">🔧 Work Order</button>
+          <button class="tab active" id="tab-proj" onclick="showTab('proj')">🖥 Project Builder</button>
+        </div>
+    
+        <!-- ===================== WORK ORDER ===================== -->
+        <div id="pane-wo" style="display:none;">
+          <div class="wo-grid">
+            <div>
+              <!-- Problems -->
+              <div class="panel">
+                <div class="panel-head">Step 1 — What's the problem?</div>
+                <div class="panel-body">
+                  <div class="problem-grid" id="prob-grid"></div>
+                </div>
+              </div>
+    
+              <!-- Repair features -->
+              <div class="panel">
+                <div class="panel-head">Step 2 — Repair features</div>
+                <div class="panel-body">
+                  <div class="feat-list" id="repair-feats"></div>
+                </div>
+              </div>
+    
+              <!-- Data handling -->
+              <div class="panel">
+                <div class="panel-head">Step 3 — Data handling</div>
+                <div class="panel-body">
+                  <div class="data-options" id="data-opts"></div>
+                </div>
+              </div>
+            </div>
+    
+            <!-- WO Quote sidebar -->
+            <div class="quote-sidebar">
+              <div class="quote-card">
+                <div class="quote-hero-band">
+                  <div class="q-label">Work Order Estimate</div>
+                  <div class="q-total" id="wo-total">$65</div>
+                  <div class="q-monthly">Diagnostic fee always included</div>
+                </div>
+                <div class="q-breakdown">
+                  <div class="qrow"><span class="qname">Diagnostic</span><span class="qval">$65</span></div>
+                  <div class="qrow"><span class="qname">Problem base</span><span class="qval" id="wo-b-prob">$0</span></div>
+                  <div class="qrow"><span class="qname">Repair features</span><span class="qval" id="wo-b-feats">$0</span></div>
+                  <div class="qrow"><span class="qname">Data handling</span><span class="qval" id="wo-b-data">$0</span></div>
+                  <div class="qrow grand"><span class="qname">Total</span><span class="qval" id="wo-b-total">$65</span></div>
+                </div>
+                <div class="q-items" id="wo-tags"></div>
+                <div class="q-actions">
+                  <button class="q-btn-main">→ Submit Work Order</button>
+                  <button class="q-btn-sec">📋 Save / Print</button>
+                </div>
+              </div>
+              <div class="included-box">
+                <div class="ib-title">Every repair includes</div>
+                <ul>
+                  <li>Diagnostic assessment</li>
+                  <li>System backup before disk work</li>
+                  <li>Post-repair test & sign-off</li>
+                  <li>30-day warranty on labor</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <!-- ===================== PROJECT BUILDER ===================== -->
+        <div id="pane-proj">
+          <div class="proj-grid">
+            <div>
+              <!-- Base package -->
+              <div class="panel">
+                <div class="panel-head">Step 1 — Base package</div>
+                <div class="panel-body">
+                  <div class="pkg-cards" id="pkg-cards"></div>
+                </div>
+              </div>
+    
+              <!-- Design features -->
+              <div class="panel">
+                <div class="panel-head">Step 2 — Design & Visual features</div>
+                <div class="panel-body">
+                  <div class="feat-addon-grid" id="design-feats"></div>
+                </div>
+              </div>
+    
+              <!-- Logic / dev features -->
+              <div class="panel">
+                <div class="panel-head">Step 3 — Logic & Development features</div>
+                <div class="panel-body">
+                  <div class="feat-addon-grid" id="dev-feats"></div>
+                </div>
+              </div>
+    
+              <!-- Content / data features -->
+              <div class="panel">
+                <div class="panel-head">Step 4 — Content & Data features</div>
+                <div class="panel-body">
+                  <div class="feat-addon-grid" id="content-feats"></div>
+                </div>
+              </div>
+            </div>
+    
+            <!-- Project Quote sidebar -->
+            <div class="quote-sidebar">
+              <div class="quote-card">
+                <div class="quote-hero-band">
+                  <div class="q-label">Project Estimate</div>
+                  <div class="q-total" id="proj-total">$199</div>
+                  <div class="q-monthly">+ <span id="proj-monthly">$0</span>/mo if hosting needed</div>
+                </div>
+                <div class="q-breakdown">
+                  <div class="qrow"><span class="qname">Base package</span><span class="qval" id="proj-b-base">$199</span></div>
+                  <div class="qrow"><span class="qname">Design features</span><span class="qval" id="proj-b-design">$0</span></div>
+                  <div class="qrow"><span class="qname">Dev features</span><span class="qval" id="proj-b-dev">$0</span></div>
+                  <div class="qrow"><span class="qname">Content features</span><span class="qval" id="proj-b-content">$0</span></div>
+                  <div class="qrow grand"><span class="qname">Total</span><span class="qval" id="proj-b-total">$199</span></div>
+                </div>
+                <div class="q-items" id="proj-tags"></div>
+                <div class="q-actions">
+                  <button class="q-btn-main">→ Build This Project</button>
+                  <button class="q-btn-sec">📋 Save Estimate</button>
+                </div>
+              </div>
+              <div class="included-box">
+                <div class="ib-title">Every project includes</div>
+                <ul>
+                  <li>Mobile responsive</li>
+                  <li>SEO basics (meta, sitemap)</li>
+                  <li>Basic contact form</li>
+                  <li>SSL ready</li>
+                  <li>30-day support window</li>
+                  <li>Source files handed off</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+      </div>
+    </section>
+    
+    <div class="divider"></div>
+    
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-inner">
+        <a class="logo" href="#" style="font-size:20px;">CODE<span>CYCLER</span></a>
+        <div class="footer-copy">Fresno, CA · Remote Available - Webmaster Chris McIntosh</div>
+        <div class="footer-copy">© 2026 · All rights reserved</div>
+      </div>
+    </footer>
+    <div data-template="view"></div>
+</body>
+</html>

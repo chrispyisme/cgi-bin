@@ -1,0 +1,46 @@
+:root {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --text: #f1f5f9;
+    --accent: #38bdf8;
+    --danger: #ef4444;
+    --success: #22c55e;
+    --warning: #f59e0b;
+}
+
+body { font-family: 'Inter', system-ui, sans-serif; background-color: var(--bg); color: var(--text); margin: 0; padding: 20px; line-height: 1.5; }
+.container { max-width: 1200px; margin: 0 auto; }
+
+/* Management Section */
+.settings-panel { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 2rem; 
+    background: #111827; 
+    padding: 1.5rem; 
+    border-radius: 12px; 
+    margin-bottom: 2rem;
+    border: 1px dashed #334155;
+}
+.list-manager h3 { margin-top: 0; font-size: 0.9rem; color: var(--accent); text-transform: uppercase; }
+.chip-container { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.chip { background: #334155; padding: 4px 10px; border-radius: 15px; font-size: 0.8rem; display: flex; align-items: center; gap: 5px; }
+.chip button { background: none; border: none; color: var(--danger); cursor: pointer; font-weight: bold; }
+
+/* Form Elements */
+form { background: var(--card); padding: 2rem; border-radius: 12px; margin-bottom: 2rem; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
+.form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; }
+input, select { background: #334155; border: 1px solid #475569; color: white; padding: 10px; border-radius: 6px; outline: none; width: 100%; box-sizing: border-box; }
+select { cursor: pointer; }
+
+/* Headers & Buttons */
+.header-flex { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+.add-btn { background: var(--accent); color: var(--bg); font-weight: bold; border: none; padding: 12px; border-radius: 6px; cursor: pointer; margin-top: 10px; width: 100%; transition: opacity 0.2s; }
+.add-btn:hover { opacity: 0.9; }
+.export-btn { background: var(--success); color: white; padding: 8px 16px; border-radius: 6px; border: none; font-weight: bold; cursor: pointer; }
+
+/* Table Styling */
+table { width: 100%; border-collapse: collapse; background: var(--card); border-radius: 12px; overflow: hidden; margin-top: 1rem; }
+th { background: #334155; padding: 15px; text-align: left; color: #94a3b8; font-size: 0.8rem; }
+td { padding: 15px; border-bottom: 1px solid #334155; font-size: 0.9rem; }
+.owner-tag { font-size: 0.7rem; background: #0ea5e9; color: white; padding: 2px 6px; border-radius: 4px; margin-right: 5px; vertical-align: middle; }

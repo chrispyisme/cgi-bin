@@ -1,0 +1,12 @@
+ === COMMIT MESSAGE TEMPLATE ===
+ Title: <type>(<scope>): <subject> (max 50 chars)
+
+ Body: Explain WHAT and WHY, not HOW
+
+ Footer: Optional issue references, breaking changes
+
+ Types: feat|fix|docs|style|refactor|perf|test|chore|breaking
+ Scopes: http|router|templates|container|database|config|core|all
+
+ Delete all lines starting with  before committing!
+ =================================

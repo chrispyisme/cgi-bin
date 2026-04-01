@@ -1,0 +1,27 @@
+# Enable CGI execution
+Options +ExecCGI
+AddHandler cgi-script .py
+
+# Disable directory listing
+Options -Indexes
+
+# Enable URL rewriting
+RewriteEngine On
+
+# --------------------------------
+# 1. Allow static assets directly
+# --------------------------------
+RewriteRule ^static/ - [L]
+
+# If the requested file exists, serve it
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+
+# If the requested directory exists, serve it
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# --------------------------------
+# 2. Route everything else to app
+# --------------------------------
+RewriteRule ^ /cgi-bin/public/index.py [L,QSA]

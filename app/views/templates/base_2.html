@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PropFlow Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Syne', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            acid: '#C6F135',
+            smoke: '#0D0D0D',
+            ash: '#1A1A1A',
+            slate2: '#252525',
+            muted: '#666',
+          },
+          animation: {
+            'slide-up': 'slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+            'fade-in': 'fadeIn 0.4s ease forwards',
+            'pulse-slow': 'pulse 3s ease-in-out infinite',
+          },
+          keyframes: {
+            slideUp: {
+              '0%': { opacity: 0, transform: 'translateY(24px)' },
+              '100%': { opacity: 1, transform: 'translateY(0)' },
+            },
+            fadeIn: {
+              '0%': { opacity: 0 },
+              '100%': { opacity: 1 },
+            },
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #0D0D0D; }
+    .card-glow { box-shadow: 0 0 0 1px #252525, 0 8px 40px rgba(0,0,0,0.6); }
+    .acid-glow { box-shadow: 0 0 20px rgba(198, 241, 53, 0.25); }
+    .bar-fill { transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1); }
+    .stagger-1 { animation-delay: 0.05s; opacity: 0; }
+    .stagger-2 { animation-delay: 0.15s; opacity: 0; }
+    .stagger-3 { animation-delay: 0.25s; opacity: 0; }
+    .stagger-4 { animation-delay: 0.35s; opacity: 0; }
+    .stagger-5 { animation-delay: 0.45s; opacity: 0; }
+    .stagger-6 { animation-delay: 0.55s; opacity: 0; }
+    .ticker { animation: ticker 12s linear infinite; }
+    @keyframes ticker {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .dot-pulse::after {
+      content: '';
+      display: inline-block;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #C6F135;
+      box-shadow: 0 0 8px #C6F135;
+      animation: pulse 1.5s ease-in-out infinite;
+      vertical-align: middle;
+      margin-left: 6px;
+    }
+  </style>
+</head>
+<body class="font-display text-white min-h-screen p-6 md:p-10">
+
+  <!-- Ticker -->
+  <div class="overflow-hidden border-b border-white/5 pb-4 mb-10">
+    <div class="flex gap-16 ticker whitespace-nowrap text-muted font-mono text-xs tracking-widest uppercase">
+      <span>UNIT 4B · RENT DUE · $1,850 &nbsp;&nbsp;·&nbsp;&nbsp; UNIT 2A · LEASE EXPIRING 4/30 &nbsp;&nbsp;·&nbsp;&nbsp; UNIT 7C · MAINTENANCE OPEN &nbsp;&nbsp;·&nbsp;&nbsp; UNIT 1D · PAYMENT RECEIVED · $2,100 &nbsp;&nbsp;·&nbsp;&nbsp; UNIT 3F · 15 DAYS OVERDUE</span>
+      <span>UNIT 4B · RENT DUE · $1,850 &nbsp;&nbsp;·&nbsp;&nbsp; UNIT 2A · LEASE EXPIRING 4/30 &nbsp;&nbsp;·&nbsp;&nbsp; UNIT 7C · MAINTENANCE OPEN &nbsp;&nbsp;·&nbsp;&nbsp; UNIT 1D · PAYMENT RECEIVED · $2,100 &nbsp;&nbsp;·&nbsp;&nbsp; UNIT 3F · 15 DAYS OVERDUE</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <div class="flex items-end justify-between mb-12 animate-fade-in">
+    <div>
+      <p class="text-muted font-mono text-xs tracking-[0.2em] uppercase mb-2">March 2026</p>
+      <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight leading-none">PROPFLOW<span class="text-acid">.</span></h1>
+    </div>
+    <div class="text-right hidden md:block">
+      <p class="text-muted text-xs font-mono">PORTFOLIO VALUE</p>
+      <p class="text-3xl font-bold text-acid font-mono">$2.4M</p>
+    </div>
+  </div>
+
+  <!-- Stat Row -->
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
+    <div class="bg-ash rounded-xl p-5 card-glow animate-slide-up stagger-1">
+      <p class="text-muted text-xs font-mono uppercase tracking-widest mb-3">Collected</p>
+      <p class="text-3xl font-bold text-acid font-mono">$18.2K</p>
+      <p class="text-xs text-muted mt-1 font-mono">this month</p>
+    </div>
+    <div class="bg-ash rounded-xl p-5 card-glow animate-slide-up stagger-2">
+      <p class="text-muted text-xs font-mono uppercase tracking-widest mb-3">Occupancy</p>
+      <p class="text-3xl font-bold font-mono">94<span class="text-acid text-2xl">%</span></p>
+      <p class="text-xs text-muted mt-1 font-mono">16 / 17 units</p>
+    </div>
+    <div class="bg-ash rounded-xl p-5 card-glow animate-slide-up stagger-3">
+      <p class="text-muted text-xs font-mono uppercase tracking-widest mb-3">Overdue</p>
+      <p class="text-3xl font-bold text-red-400 font-mono">3</p>
+      <p class="text-xs text-muted mt-1 font-mono">tenants</p>
+    </div>
+    <div class="bg-ash rounded-xl p-5 card-glow animate-slide-up stagger-4">
+      <p class="text-muted text-xs font-mono uppercase tracking-widest mb-3">Open Tickets</p>
+      <p class="text-3xl font-bold font-mono">7</p>
+      <p class="text-xs text-muted mt-1 font-mono">maintenance</p>
+    </div>
+  </div>
+
+  <!-- Main Grid -->
+  <div class="grid md:grid-cols-3 gap-4 mb-4">
+
+    <!-- Recent Payments -->
+    <div class="md:col-span-2 bg-ash rounded-2xl p-6 card-glow animate-slide-up stagger-3">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="font-bold text-lg tracking-tight">Recent Payments</h2>
+        <span class="text-acid text-xs font-mono uppercase tracking-widest dot-pulse">Live</span>
+      </div>
+      <div class="space-y-3">
+        <!-- Payment Row -->
+        <div class="flex items-center gap-4 p-3 bg-slate2 rounded-xl hover:bg-white/5 transition-colors cursor-pointer group">
+          <div class="w-10 h-10 rounded-lg bg-acid/10 flex items-center justify-center text-acid font-bold text-sm font-mono flex-shrink-0">4B</div>
+          <div class="flex-1 min-w-0">
+            <p class="font-semibold text-sm">Marcus T.</p>
+            <p class="text-muted text-xs font-mono">124 Oak St · Check #4421</p>
+          </div>
+          <div class="text-right">
+            <p class="font-bold text-acid font-mono">+$2,100</p>
+            <p class="text-muted text-xs font-mono">Today 9:14am</p>
+          </div>
+          <div class="w-5 h-5 rounded-full bg-acid/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+            <svg class="w-3 h-3 text-acid" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+        <div class="flex items-center gap-4 p-3 bg-slate2 rounded-xl hover:bg-white/5 transition-colors cursor-pointer group">
+          <div class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-400 font-bold text-sm font-mono flex-shrink-0">1D</div>
+          <div class="flex-1 min-w-0">
+            <p class="font-semibold text-sm">Angela R.</p>
+            <p class="text-muted text-xs font-mono">88 Maple Ave · Zelle</p>
+          </div>
+          <div class="text-right">
+            <p class="font-bold text-blue-400 font-mono">+$1,650</p>
+            <p class="text-muted text-xs font-mono">Yesterday</p>
+          </div>
+          <div class="w-5 h-5 rounded-full bg-blue-500/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+            <svg class="w-3 h-3 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+        <div class="flex items-center gap-4 p-3 bg-slate2 rounded-xl hover:bg-white/5 transition-colors cursor-pointer group">
+          <div class="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center text-red-400 font-bold text-sm font-mono flex-shrink-0">3F</div>
+          <div class="flex-1 min-w-0">
+            <p class="font-semibold text-sm">Unknown Payer</p>
+            <p class="text-muted text-xs font-mono">88 Maple Ave · Money Order</p>
+          </div>
+          <div class="text-right">
+            <p class="font-bold text-red-400 font-mono">OVERDUE</p>
+            <p class="text-muted text-xs font-mono">15 days</p>
+          </div>
+          <div class="w-5 h-5 rounded-full bg-red-500/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+            <svg class="w-3 h-3 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+        <div class="flex items-center gap-4 p-3 bg-slate2 rounded-xl hover:bg-white/5 transition-colors cursor-pointer group">
+          <div class="w-10 h-10 rounded-lg bg-acid/10 flex items-center justify-center text-acid font-bold text-sm font-mono flex-shrink-0">2A</div>
+          <div class="flex-1 min-w-0">
+            <p class="font-semibold text-sm">Derrick W.</p>
+            <p class="text-muted text-xs font-mono">55 Pine Blvd · Cash Receipt</p>
+          </div>
+          <div class="text-right">
+            <p class="font-bold text-acid font-mono">+$975</p>
+            <p class="text-muted text-xs font-mono">Mar 24</p>
+          </div>
+          <div class="w-5 h-5 rounded-full bg-acid/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+            <svg class="w-3 h-3 text-acid" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Collection Rate -->
+    <div class="bg-ash rounded-2xl p-6 card-glow animate-slide-up stagger-4 flex flex-col">
+      <h2 class="font-bold text-lg tracking-tight mb-6">Collection Rate</h2>
+      <div class="space-y-4 flex-1">
+        <div>
+          <div class="flex justify-between text-xs font-mono text-muted mb-2">
+            <span>124 Oak St</span><span class="text-white">100%</span>
+          </div>
+          <div class="h-1.5 bg-slate2 rounded-full overflow-hidden">
+            <div class="h-full bg-acid rounded-full bar-fill" style="width: 100%"></div>
+          </div>
+        </div>
+        <div>
+          <div class="flex justify-between text-xs font-mono text-muted mb-2">
+            <span>88 Maple Ave</span><span class="text-white">83%</span>
+          </div>
+          <div class="h-1.5 bg-slate2 rounded-full overflow-hidden">
+            <div class="h-full bg-acid rounded-full bar-fill" style="width: 83%"></div>
+          </div>
+        </div>
+        <div>
+          <div class="flex justify-between text-xs font-mono text-muted mb-2">
+            <span>55 Pine Blvd</span><span class="text-yellow-400">67%</span>
+          </div>
+          <div class="h-1.5 bg-slate2 rounded-full overflow-hidden">
+            <div class="h-full bg-yellow-400 rounded-full bar-fill" style="width: 67%"></div>
+          </div>
+        </div>
+        <div>
+          <div class="flex justify-between text-xs font-mono text-muted mb-2">
+            <span>9 Birch Lane</span><span class="text-red-400">50%</span>
+          </div>
+          <div class="h-1.5 bg-slate2 rounded-full overflow-hidden">
+            <div class="h-full bg-red-400 rounded-full bar-fill" style="width: 50%"></div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-6 pt-6 border-t border-white/5">
+        <p class="text-muted text-xs font-mono uppercase tracking-widest mb-1">Overall</p>
+        <p class="text-4xl font-extrabold text-acid font-mono">87<span class="text-2xl">%</span></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Row -->
+  <div class="grid md:grid-cols-3 gap-4">
+    <!-- Log Payment CTA -->
+    <div class="bg-acid rounded-2xl p-6 acid-glow animate-slide-up stagger-5 flex flex-col justify-between min-h-[140px] cursor-pointer hover:scale-[1.02] transition-transform">
+      <p class="font-extrabold text-smoke text-2xl leading-tight">Log New<br/>Payment</p>
+      <div class="flex items-center gap-2">
+        <span class="text-smoke text-xs font-mono uppercase tracking-widest font-semibold">Quick Entry</span>
+        <svg class="w-4 h-4 text-smoke" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </div>
+    </div>
+
+    <!-- Upcoming Leases -->
+    <div class="bg-ash rounded-2xl p-6 card-glow animate-slide-up stagger-5">
+      <h2 class="font-bold text-sm tracking-tight text-muted uppercase font-mono mb-4">Expiring Leases</h2>
+      <div class="space-y-3">
+        <div class="flex justify-between items-center">
+          <div>
+            <p class="text-sm font-semibold">Unit 2A</p>
+            <p class="text-xs text-muted font-mono">88 Maple Ave</p>
+          </div>
+          <span class="text-xs font-mono bg-yellow-400/10 text-yellow-400 px-2 py-1 rounded-lg">Apr 30</span>
+        </div>
+        <div class="flex justify-between items-center">
+          <div>
+            <p class="text-sm font-semibold">Unit 6E</p>
+            <p class="text-xs text-muted font-mono">55 Pine Blvd</p>
+          </div>
+          <span class="text-xs font-mono bg-red-400/10 text-red-400 px-2 py-1 rounded-lg">May 15</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scan Upload -->
+    <div class="bg-ash rounded-2xl p-6 card-glow animate-slide-up stagger-6 border border-dashed border-white/10 hover:border-acid/40 transition-colors cursor-pointer group">
+      <div class="flex flex-col items-center justify-center h-full text-center gap-3">
+        <div class="w-12 h-12 rounded-xl bg-slate2 group-hover:bg-acid/10 transition-colors flex items-center justify-center">
+          <svg class="w-6 h-6 text-muted group-hover:text-acid transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+        </div>
+        <div>
+          <p class="text-sm font-semibold group-hover:text-acid transition-colors">Upload Scan</p>
+          <p class="text-xs text-muted font-mono mt-1">Check · Receipt · MO</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="mt-10 flex items-center justify-between text-muted text-xs font-mono">
+    <span>PROPFLOW v0.1 · ALPHA</span>
+    <span>© 2026</span>
+  </div>
+<div data-template="view"></div>
+</body>
+</html>

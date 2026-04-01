@@ -1,0 +1,35 @@
+[
+    {
+        "abstract": "logger",
+        "concrete": "lib.logging.Logger.Logger",
+        "type": "singleton",
+        "params": {
+            "level": "INFO",
+            "file": "/usr/lib/cgi-bin/app/logs/App.log",
+            "name": "sm",
+            "format": "%(asctime)s [%(levelname)8s] %(name)s:%(filename)s:%(lineno)d - %(funcName)s() - %(message)s"
+        }
+    },
+    {
+        "abstract": "response",
+        "concrete": "lib.http.Response.Response",
+        "type": "singleton"
+    },
+    {
+        "abstract": "Request",
+        "concrete": "lib.http.Request.Request",
+        "type": "factory"
+    },
+    {
+        "abstract": "router",
+        "concrete": "lib.routing.Router.Router",
+        "type": "singleton",
+        "params": { "request": "Request" }
+    },
+    {
+        "abstract": "fileloader",
+        "concrete": "lib.fs.files.FileSystem",
+        "type": "singleton",
+        "params": { "directories": ["/usr/lib/cgi-bin/static/assets/enabled"] }
+    }
+]
